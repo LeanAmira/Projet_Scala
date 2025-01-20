@@ -3,11 +3,16 @@ class DSL {
     actions
   }
 
-  def event(action: String): EventBuilder = new EventBuilder(action)
+  def event(action: String): EventBuilder = {
+    new EventBuilder(action)
+  }
+}
 
-  class EventBuilder(action: String) {
-    def at(time: String): Unit = {
-      Scheduler.addEvent(action, time)
-    }
+class EventBuilder(action: String) {
+  private var time: String = _
+
+  def at(time: String): Unit = {
+    this.time = time
+    Scheduler.addEvent(action, time)
   }
 }
