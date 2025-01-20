@@ -1,0 +1,27 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /Users/ashrafadelsabaa/Desktop/Projet_Scala/target/scala-3.3.4/projet_scala_3-0.1.0-SNAPSHOT.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ashrafadelsabaa/Desktop/Projet_Scala/target/scala-3.3.4/classes/Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Event.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ashrafadelsabaa/Desktop/Projet_Scala/target/scala-3.3.4/classes/Event.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Scheduler$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ashrafadelsabaa/Desktop/Projet_Scala/target/scala-3.3.4/classes/Scheduler$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DSL$EventBuilder.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ashrafadelsabaa/Desktop/Projet_Scala/target/scala-3.3.4/classes/DSL$EventBuilder.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Event$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ashrafadelsabaa/Desktop/Projet_Scala/target/scala-3.3.4/classes/Event$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Event.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ashrafadelsabaa/Desktop/Projet_Scala/target/scala-3.3.4/classes/Event.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DSL.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ashrafadelsabaa/Desktop/Projet_Scala/target/scala-3.3.4/classes/DSL.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Scheduler.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ashrafadelsabaa/Desktop/Projet_Scala/target/scala-3.3.4/classes/Scheduler.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ashrafadelsabaa/Desktop/Projet_Scala/target/scala-3.3.4/classes/Main.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ashrafadelsabaa/Desktop/Projet_Scala/target/scala-3.3.4/classes/Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Scheduler.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ashrafadelsabaa/Desktop/Projet_Scala/target/scala-3.3.4/classes/Scheduler.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	DSL.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /Users/ashrafadelsabaa/Desktop/Projet_Scala/target/scala-3.3.4/classes/DSL.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
