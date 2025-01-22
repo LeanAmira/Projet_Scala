@@ -8,12 +8,11 @@ Ce projet est une implémentation d'un **Domain-Specific Language (DSL)** en Sca
 ## **Fonctionnalités Principales**
 
 1. Ajouter des événements avec une action et une heure spécifique
-2. Planifier des événements récurrents (à des heures fixes, quotidienne ou hebdomadaireme)
-3. Lister et exécuter les événements dans l'ordre chronologique
+2. Planifier des événements récurrents (heures fixes, quotidienne ou hebdomadaire)
+3. Lister et exécuter les événements dans un ordre chronologique.
 4. Gérer plusieurs appareils IoT (machine à café, lumières, lecteur de musique et aspirateur électrique)
 5. Supprimer ou rechercher un événement par son action
 6. Définir des délais et incrémenter les heures
-7. Supporter une syntaxe fluide et intuitive via un DSL
 
 ---
 
