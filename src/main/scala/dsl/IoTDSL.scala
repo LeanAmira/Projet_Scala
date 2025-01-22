@@ -71,7 +71,7 @@ object IoTDSL {
 				at(timestamp)
 			}
 			
-			private def every(interval: Duration, delay: zio.Duration): UIO[Unit] = scheduleRepeatedEvent(Schedule.fixed(interval), delay)
+			def every(interval: Duration, delay: zio.Duration = zio.Duration.Zero): UIO[Unit] = scheduleRepeatedEvent(Schedule.fixed(interval), delay)
 			
 			def daily(time: LocalTime): UIO[Unit] = {
 				val now = ZonedDateTime.now()
