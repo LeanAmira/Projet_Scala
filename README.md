@@ -84,30 +84,6 @@ git clone https://github.com/LeanAmira/Projet_Scala.git
 sbt run
 ```
 
-## **Tests et Validation**
-
-### **Couverture des tests**
-
-Le projet inclut des tests unitaires pour valider :
-
-- L'ajout, la modification et la suppression d'événements.
-- La gestion des récurrences (événements journaliers et hebdomadaires).
-- L'exécution des événements dans le bon ordre.
-
-Exemple de test :
-
-```scala
-test("Test fonctionnel : Ajouter et exécuter des événements") {
-  Scheduler.addEvent("Préparer le café", "08:00")
-  Scheduler.addRecurringEvent("Ménage", "23:00", "daily")
-
-  Scheduler.run()
-
-  val event = Scheduler.findEvent("Préparer le café")
-  assert(event.isDefined)
-  assert(event.get.time == "08:00")
-}
-```
 
 ## **Structure du projet**
 
