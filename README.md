@@ -76,18 +76,12 @@ Instructions
 
 1. Clonez le dépôt du projet
 ```scala
-git clone <URL_DU_DEPOT>
-cd scheduler-dsl
+git clone https://github.com/LeanAmira/Projet_Scala.git
 ```
 
 2. Lancez le projet avec SBT
 ```scala
 sbt run
-```
-
-3. Pour exécuter les tests unitaires
-```scala
-sbt test
 ```
 
 ## **Tests et Validation**
