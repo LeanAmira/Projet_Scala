@@ -10,9 +10,16 @@ class DSL {
 
 class EventBuilder(action: String) {
   private var time: String = _
+  private var recurrence: Option[String] = None
 
-  def at(time: String): Unit = {
+  def at(time: String): EventBuilder = {
     this.time = time
-    Scheduler.addEvent(action, time)
+    this
   }
+
+  def recurring(every: String): Unit = {
+    this.recurrence = Some(every)
+    Scheduler.addRecurringEvent(action, time, every)
+  }
+
 }
