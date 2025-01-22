@@ -17,6 +17,8 @@ lazy val root = (project in file("."))
     libraryDependencies ++= Seq(
       "org.scalatest" %% "scalatest" % "3.2.17" % Test, // Add ScalaTest for testing
       "dev.zio" %% "zio" % "2.0.0",                      // Add ZIO core
-      "dev.zio" %% "zio-streams" % "2.0.0"
+      "dev.zio" %% "zio-streams" % "2.0.0", 
+        "dev.zio" %% "zio-test" % "2.0.15" % Test,
+        "dev.zio" %% "zio-test-sbt" % "2.0.15" % Test
     )
   )

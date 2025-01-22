@@ -9,7 +9,7 @@ import scala.collection.mutable
 
 object IoTDSL {
 	
-	val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")
+	private val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")
 	
 	trait DeviceEvent {
 		def message: String
@@ -36,7 +36,7 @@ object IoTDSL {
 		}
 		
 		class EventBuilder(event: DeviceEvent) {
-			private def scheduleRepeatedEvent(schedule: Schedule[Any, Any, Any], delay: Duration = zio.Duration.Zero): UIO[Unit] = {
+			private def scheduleRepeatedEvent(schedule: Schedule[Any, Any, Any], delay: Duration = Duration.Zero): UIO[Unit] = {
 				val effect = ZStream
 				  .repeatWithSchedule(event, schedule)
 				  .foreach { e => ZIO.succeed(e.trigger()) }
@@ -48,7 +48,7 @@ object IoTDSL {
 				effect
 			}
 			
-			private def scheduleOneTimeEvent(delay: Duration = zio.Duration.Zero): UIO[Unit] = {
+			private def scheduleOneTimeEvent(delay: Duration = Duration.Zero): UIO[Unit] = {
 				val effect = ZStream
 				  .succeed(event)
 				  .schedule(Schedule.once.addDelay( _ => delay)) // Add the delay before triggering
@@ -61,7 +61,7 @@ object IoTDSL {
 			}
 			
 			def at(timestamp: Long): EventBuilder = {
-				val delay = zio.Duration.fromMillis(timestamp - ZonedDateTime.now().toInstant.toEpochMilli)
+				val delay = Duration.fromMillis(timestamp - ZonedDateTime.now().toInstant.toEpochMilli)
 				scheduleOneTimeEvent(delay)
 				this
 			}
@@ -71,7 +71,7 @@ object IoTDSL {
 				at(timestamp)
 			}
 			
-			def every(interval: Duration, delay: zio.Duration = zio.Duration.Zero): UIO[Unit] = scheduleRepeatedEvent(Schedule.fixed(interval), delay)
+			def every(interval: Duration, delay: Duration = Duration.Zero): UIO[Unit] = scheduleRepeatedEvent(Schedule.fixed(interval), delay)
 			
 			def daily(time: LocalTime): UIO[Unit] = {
 				val now = ZonedDateTime.now()
@@ -83,7 +83,7 @@ object IoTDSL {
 				  .plusDays(if (now.toLocalTime.isAfter(time)) 1 else 0)
 				val firstMilli = firstOccurrence.toInstant.toEpochMilli
 				val delay = Duration.fromMillis(firstOccurrence.toInstant.toEpochMilli - now.toInstant.toEpochMilli)
-				every(zio.Duration.fromJava(java.time.Duration.ofHours(24)), delay)
+				every(24.hours, delay)
 			}
 			
 			def daily(time: String): UIO[Unit] = {
@@ -97,8 +97,8 @@ object IoTDSL {
 				  .`with`(time)
 				  .`with`(dayOfWeek)
 				  .plusWeeks(if (now.getDayOfWeek.getValue > dayOfWeek.getValue || (now.getDayOfWeek == dayOfWeek && now.toLocalTime.isAfter(time))) 1 else 0)
-				val delay = zio.Duration.fromMillis(firstOccurrence.toInstant.toEpochMilli - now.toInstant.toEpochMilli)
-				every(zio.Duration.fromJava(java.time.Duration.ofDays(7)), delay)
+				val delay = Duration.fromMillis(firstOccurrence.toInstant.toEpochMilli - now.toInstant.toEpochMilli)
+				every(7.days, delay)
 			}
 			
 			def weekly(dayOfWeek: DayOfWeek, time: String): UIO[Unit] = {
